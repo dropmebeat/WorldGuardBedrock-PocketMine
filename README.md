@@ -1,41 +1,39 @@
-# WorldEdit
+# WorldGuard
 
-**WorldEdit** is the ultimate in-game map editor for **PocketMine-MP**. It allows you to build, fix, and transform your world using powerful commands and brushes, turning complex building tasks into simple operations.
+**WorldGuard** is the industry-standard region management and protection plugin for **PocketMine-MP**. It allows you to create protected zones (claims) where you can control exactly what players are allowed to do, from building and breaking blocks to using items and PVP.
 
 ## Features
 
-*   **Mass Editing:** Set, replace, or delete thousands of blocks instantly.
-*   **Region Selection:** Use the iconic wooden axe to select areas by defining two points.
-*   **Clipboard Management:** Copy, cut, and paste structures with ease.
-*   **Schematics:** Save your creations to files and load them into any world.
-*   **Mathematical Transforms:** Rotate, flip, or stack your selections.
-*   **Generation Tools:** Create spheres, cylinders, and pyramids with a single command.
-*   **Powerful Brushes:** Sculpt terrain or paint blocks from a distance.
+*   **Region Protection:** Create rectangular or polygonal zones to protect spawns, shops, or player bases.
+*   **Flag System:** Apply specific rules to regions, such as `pvp: deny`, `tnt: deny`, or `use: allow`.
+*   **Priority Levels:** Layer regions on top of each other (e.g., a shop region inside a protected city).
+*   **Owner/Member System:** Easily manage who has building rights within a specific area.
+*   **Parenting:** Inherit settings from one region to another for easier management.
+*   **Integration:** Works seamlessly with **WorldEdit** for region selection.
 
-## Essential Commands
+## Commands
 
 
 | Command | Description | Permission |
 |---------|-------------|------------|
-| `//wand` | Get the edit wand (Wooden Axe) | `worldedit.selection.wand` |
-| `//set <block>` | Fill the selection with a block | `worldedit.region.set` |
-| `//replace <to>` | Replace all blocks in selection | `worldedit.region.replace` |
-| `//undo` / `//redo` | Revert or restore your last action | `worldedit.history.undo` |
-| `//copy` / `//paste` | Use the clipboard to move builds | `worldedit.clipboard.copy` |
+| `/rg define <name>` | Create a new region from your selection | `worldguard.region.define` |
+| `/rg addowner <name> <player>` | Add an owner to a region | `worldguard.region.addowner` |
+| `/rg flag <name> <flag> <value>` | Set a custom rule for a region | `worldguard.region.flag` |
+| `/rg info` | View details about the region you are in | `worldguard.region.info` |
+| `/rg remove <name>` | Delete a region | `worldguard.region.remove` |
 
-## How to Start
+## How to Protect an Area
 
-1.  Type `//wand` to get the selection tool.
-2.  **Left-click** a block to set **Point 1**.
-3.  **Right-click** a block to set **Point 2**.
-4.  Run a command like `//set stone` to modify the selected area.
+1.  Select two points using the **WorldEdit** wand (`//wand`).
+2.  Type `/rg define spawn` to create a region named "spawn".
+3.  Type `/rg flag spawn pvp deny` to disable combat in that area.
 
 ## Installation
 
-1. Download the `WorldEdit.phar` from [Poggit](https://poggit.pmmp.io).
-2. Place it in your `/plugins/` folder.
-3. Restart your server.
-4. Grant the `worldedit.*` permission to your admin group.
+1.  **Requirement:** Ensure **WorldEdit** is installed.
+2.  Download `WorldGuard.phar` and place it in your `/plugins/` folder.
+3.  Restart your server.
+4.  Start protecting your world!
 
 ---
-*Built for precision. Designed for scale.*
+*The ultimate tool for server safety and territory control.*
