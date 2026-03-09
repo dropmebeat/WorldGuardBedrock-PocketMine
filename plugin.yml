@@ -1,0 +1,36 @@
+name: WorldGuardBedrock
+version: 1.0.0
+main: icrafts\worldguardbedrock\WorldGuardBedrock
+api: 5.0.0
+author: iCrafts
+description: Basic WorldGuard-like region protection for PocketMine.
+
+commands:
+  rg:
+    description: WorldGuard region command
+    usage: "/rg <subcommand>"
+    permission: wg.use
+
+permissions:
+  wg.use:
+    default: op
+  wg.admin:
+    default: op
+  wg.bypass:
+    default: op
+  wg.region.wand:
+    default: op
+  wg.region.select:
+    default: op
+  wg.region.claim:
+    default: op
+  wg.region.remove:
+    default: op
+  wg.region.member:
+    default: op
+  wg.region.flag:
+    default: op
+  wg.region.info:
+    default: op
+  wg.region.list:
+    default: op
